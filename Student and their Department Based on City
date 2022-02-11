@@ -1,0 +1,5 @@
+SELECT student_name, department_name FROM Student 
+INNER JOIN Department  
+ON( Department.department_id=Student.department_id)
+WHERE city='Coimbatore'
+order by student_name;
