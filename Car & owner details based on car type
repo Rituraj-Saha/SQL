@@ -1,0 +1,2 @@
+SELECT car_id,car_name,owner_id from cars
+WHERE car_type='Hatchback' OR car_type = 'SUV' ORDER BY car_id asc;
