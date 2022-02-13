@@ -1,0 +1,14 @@
+CREATE OR REPLACE PROCEDURE
+insert_credit(
+credit_id IN NUMBER,
+credit_card_number IN VARCHAR,
+credit_card_expire IN VARCHAR,
+holder_name IN VARCHAR,
+card_type IN VARCHAR
+)
+AS
+BEGIN
+    INSERT INTO credit_card(id,card_number,card_expire,name,cc_type)
+    VALUES (credit_id,credit_card_number,credit_card_expire,holder_name,card_type);
+    COMMIT;
+END insert_credit;
