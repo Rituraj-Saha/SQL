@@ -1,0 +1,16 @@
+DECLARE
+d_id Department.DEPARTMENT_ID%type;
+d_name Department.DEPARTMENT_NAME%type;
+d_loc Department.LOCATION_ID%type;
+BEGIN
+SELECT * INTO d_id,d_name,d_loc
+FROM Department WHERE Department.LOCATION_ID LIKE('HQ%');
+d_loc := 'HQ-BLR-101';
+UPDATE Department
+SET DEPARTMENT_ID = d_id,
+    DEPARTMENT_NAME = d_name,
+    LOCATION_ID = d_loc
+    WHERE DEPARTMENT_ID = d_id;
+COMMIT;
+END;
+/
